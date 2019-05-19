@@ -10,7 +10,7 @@ class Calc(object):
 	def __init__(self, queue):
 		self.queue = queue
 		self.winip = "192.168.1.102"
-		sel.piip = "192.168.1.104"
+		self.piip = "192.168.1.104"
 
 	def calc(self):
 		calctask = BaseThread(self.func)
