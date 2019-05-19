@@ -18,7 +18,7 @@ class WaitSearch(object):
 		#equs = []
 		print("wait win")
 		server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		server.bind(("127.0.0.1", 9967))
+		server.bind(("0.0.0.0", 9967))
 		server.listen(10)
 		while(True):
 			conn, addr = server.accept()

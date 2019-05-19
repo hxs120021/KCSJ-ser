@@ -9,7 +9,7 @@ from Calc.Calc import Calc
 checkDatas = Queue()
 calcDatas = Queue()
 online = ["ICU996^equ996^testname^man^40"]
-
+sendip = "192.168.1.102"
 #sendalrm = SendMsg("127.0.0.1", "error!")
 #sendalrm.send()
 
@@ -23,7 +23,7 @@ waitwin = WaitSearch(online)
 waitwin.wasend()
 
 #oo = input()
-sendcheck = SendCheck(checkDatas)
+sendcheck = SendCheck(checkDatas, sendip)
 sendcheck.whilesend()
 
 calc = Calc(calcDatas)

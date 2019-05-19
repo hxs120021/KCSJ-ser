@@ -15,7 +15,7 @@ class RecvMsg:
 	def func(self):
 		print("wait check data")
 		server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		server.bind(('127.0.0.1', 9966))
+		server.bind(('0.0.0.0', 9966))
 		server.listen(10)
 		while(True):
 			conn, addr = server.accept()

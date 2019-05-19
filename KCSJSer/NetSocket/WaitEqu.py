@@ -9,7 +9,7 @@ class WaitEqu(object):
 	def func(self):
 		print("wait Equ 6698")
 		server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		server.bind(('127.0.0.1', 6698))
+		server.bind(('0.0.0.0', 6698))
 		server.listen(10)
 		while(True):
 			conn, addr = server.accept()

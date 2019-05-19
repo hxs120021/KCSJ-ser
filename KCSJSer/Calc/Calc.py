@@ -6,8 +6,11 @@ from NetSocket.SendMsg import SendMsg
 from Data.Check import Check
 
 class Calc(object):
+	
 	def __init__(self, queue):
 		self.queue = queue
+		self.winip = "192.168.1.102"
+		sel.piip = "192.168.1.104"
 
 	def calc(self):
 		calctask = BaseThread(self.func)
@@ -30,8 +33,8 @@ class Calc(object):
 			if((not state1) or (not state2) or (not state3) or (not state4) or (not state5)):
 				#print("warning!")
 				#需要分别发给win和pi
-				alrm = SendMsg("127.0.0.1", "alrm")
-				alrm = SendMsg("127.0.0.2", "alrm")
+				alrm = SendMsg(self.winip, "alrm")
+				alrm = SendMsg(self.piip, "alrm")
 
 		#if(self.weight.calc() and self.thresh.isInTreshold()):
 		#	return
