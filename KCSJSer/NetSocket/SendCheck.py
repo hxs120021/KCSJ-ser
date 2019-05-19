@@ -14,14 +14,15 @@ class SendCheck(object):
 
 	def func(self):
 		client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		checkdata = self.queue.get()
 		client.connect((self.ip, 9966))
 		print("connect #####")
 		while(True):
 			try:
-				checkdata = self.queue.get()
 				client.send(checkdata.encode("utf-8"))
 				data = client.recv(1024)
 				print(data.decode("utf-8"))
+				checkdata = self.queue.get()
 			except ConnectionError as e:
 				print(str(e))
 				break

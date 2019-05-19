@@ -8,18 +8,22 @@ from Calc.Calc import Calc
 
 checkDatas = Queue()
 calcDatas = Queue()
-online = ["ICU996^equ996^testname^man^40"]
-sendip = "192.168.1.102"
+#online = ["ICU996^equ996^testname^man^40"]
+online = []
+#发送地址
+sendip = "10.63.10.72"
+#本地监听地址
+bindip = "10.63.2.115"
 #sendalrm = SendMsg("127.0.0.1", "error!")
 #sendalrm.send()
 
-waitEqu = WaitEqu(online)
+waitEqu = WaitEqu(online, bindip)
 waitEqu.waitEqu()
 
-recvmsg = RecvMsg(checkDatas, calcDatas)
+recvmsg = RecvMsg(checkDatas, calcDatas, bindip)
 recvmsg.Recv()
 
-waitwin = WaitSearch(online)
+waitwin = WaitSearch(online, bindip)
 waitwin.wasend()
 
 #oo = input()

@@ -6,8 +6,8 @@ from Data.Equipment import Equipment
 #1.用什么存储当前在线设备
 #2.没想出来
 class WaitSearch(object):
-	def __init__(self, online):
-		#self.ip = ip
+	def __init__(self, online, ip):
+		self.ip = ip
 		self.online = online
 
 	def wasend(self):
@@ -18,7 +18,7 @@ class WaitSearch(object):
 		#equs = []
 		print("wait win")
 		server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		server.bind(("0.0.0.0", 9967))
+		server.bind((self.ip, 9967))
 		server.listen(10)
 		while(True):
 			conn, addr = server.accept()
