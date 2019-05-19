@@ -15,7 +15,7 @@ class SendCheck(object):
 	def func(self):
 		client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		checkdata = self.queue.get()
-		client.connect((self.ip, 9966))
+		client.connect((self.ip, 9988))
 		print("connect #####")
 		while(True):
 			try:

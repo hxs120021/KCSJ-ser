@@ -27,7 +27,7 @@ waitwin = WaitSearch(online, bindip)
 waitwin.wasend()
 
 #oo = input()
-sendcheck = SendCheck(checkDatas, sendip)
+sendcheck = SendCheck(checkDatas, bindip)
 sendcheck.whilesend()
 
 calc = Calc(calcDatas)
