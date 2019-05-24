@@ -8,7 +8,7 @@ from Calc.Calc import Calc
 
 checkDatas = Queue()
 calcDatas = Queue()
-#online = ["ICU996^equ996^testname^man^40"]
+#online = ["ICU996^equ996^张三^man^40"]
 online = []
 #发送地址
 sendip = "10.63.10.72"
