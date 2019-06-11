@@ -20,6 +20,7 @@ class Calc(object):
 		weight = Weight()
 		thresh = Threshold()
 		i = 0
+		errorindex = 0
 		while(True):
 			print("start wait queue:")
 			data = self.queue.get()
@@ -30,12 +31,14 @@ class Calc(object):
 			state4 = thresh.calc(check.spo2, DataType.spo2)
 			state5 = weight.calc(check.temp, DataType.temp)
 			state6 = thresh.calc(check.temp, DataType.temp)
-			if((not state1) or (not state2) or (not state3) or (not state4) or (not state5)):
-				#print("warning!")
-				#需要分别发给win和pi
-				alrm = SendMsg(self.winip, "alrm")
-				alrm = SendMsg(self.piip, "alrm")
-
+			if(errorindex == 0):
+				#只报错1次
+				if((not state1) or (not state2) or (not state3) or (not state4) or (not state5) or (not state6)):
+					#print("warning!")
+					#需要分别发给win和pi
+					alrm = SendMsg(self.winip, "alrm")
+					alrm = SendMsg(self.piip, "alrm")
+					errorindex = 1
 		#if(self.weight.calc() and self.thresh.isInTreshold()):
 		#	return
 		#else:
