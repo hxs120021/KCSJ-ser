@@ -11,9 +11,9 @@ calcDatas = Queue()
 #online = ["ICU996^equ996^张三^man^40"]
 online = []
 #发送地址
-sendip = "10.63.10.72"
+sendip = "192.168.43.246"
 #本地监听地址
-bindip = "10.63.2.115"
+bindip = "192.168.43.175"
 #sendalrm = SendMsg("127.0.0.1", "error!")
 #sendalrm.send()
 
